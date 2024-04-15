@@ -9,8 +9,8 @@ then
     echo "Solana has been installed."
 
     solana_path=$(echo "$install_logs" | grep -oP 'export PATH="\K[^"]+(?=" to)')
-    echo "Adding Solana to PATH..."
-
+    echo "Adding Solana to PATH... $solana_path"
+    
     export PATH="$solana_path:$PATH"
     echo "Solana has been added to the PATH."
 else
