@@ -6,8 +6,10 @@ then
     sh -c "$(curl -sSfL https://release.solana.com/v1.18.4/install)"
     echo "Solana has been installed."
     echo "Adding Solana to PATH..."
+
     install_output=$(sh -c "$(curl -sSfL https://release.solana.com/v1.18.4/install)")
     solana_path=$(echo "$install_output" | grep -oP '(?<=export PATH=")[^:]+')
+
     export PATH="$solana_path:$PATH"
     echo "Solana has been added to the PATH."
 else
@@ -26,14 +28,10 @@ read -r choice
 
 case $choice in
     1)
-        echo "Enter the number of threads (1-16): "
-        read -r threads
-        solana-keygen grind --starts-with "$char_name":$threads
+        solana-keygen grind --starts-with "$char_name":1
         ;;
     2)
-        echo "Enter the number of threads (1-16): "
-        read -r threads
-        solana-keygen grind --ends-with "$char_name":$threads
+        solana-keygen grind --ends-with "$char_name":1
         ;;
     *)
         echo "Invalid choice. Please enter either 1 or 2."
