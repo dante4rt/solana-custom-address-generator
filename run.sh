@@ -30,12 +30,28 @@ read -r choice
 
 case $choice in
     1)
-        solana-keygen grind --starts-with "$char_name":1
+        solana-keygen grind --starts-with "$char_name":1 > temp_output.txt
         ;;
     2)
-        solana-keygen grind --ends-with "$char_name":1
+        solana-keygen grind --ends-with "$char_name":1 > temp_output.txt
         ;;
     *)
         echo "Invalid choice. Please enter either 1 or 2."
         ;;
 esac
+
+if [[ -s temp_output.txt ]]; then
+    json_file=$(grep -oP '\b\w+\.json\b' temp_output.txt)
+    if [[ -f $json_file ]]; then
+json_data=$(cat "$json_file")
+echo "Data extracted from $json_file:"
+echo "$json_data"
+echo ""
+echo "Copy all of it, paste to Phantom as Private Key, and its done!"
+echo "Subscribe us: https://t.me/HappyCuanAirdrop"
+    else
+        echo "Error: JSON file $json_file not found."
+    fi
+fi
+
+rm -f temp_output.txt
