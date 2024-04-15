@@ -1,0 +1,13 @@
+Searching with 8 threads for:
+	1 pubkey that starts with 'paus' and ends with ''
+Searched 1000000 keypairs in 3s. 0 matches found.
+Searched 2000000 keypairs in 6s. 0 matches found.
+Searched 3000000 keypairs in 9s. 0 matches found.
+Searched 4000000 keypairs in 12s. 0 matches found.
+Searched 5000000 keypairs in 15s. 0 matches found.
+Searched 6000000 keypairs in 18s. 0 matches found.
+Searched 7000000 keypairs in 23s. 0 matches found.
+Searched 8000000 keypairs in 28s. 0 matches found.
+Searched 9000000 keypairs in 31s. 0 matches found.
+Searched 10000000 keypairs in 34s. 0 matches found.
+Searched 11000000 keypairs in 37s. 0 matches found.
